@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>No live ads using dynamic time warping</title>
+        <script src="https://cdn.jsdelivr.net/npm/meyda/dist/web/meyda.min.js"></script>
+        <script src="dtw.js"></script>
+    </head>
+    <body>
+        <audio id="radio_player" controls style="width: 100%;">
+            <source src="../data/npo_example_02.mp3" type="audio/mpeg">
+        </audio>
+        <button onclick="javascript:calculateContext()">Calculate context</button>
+        <button onclick="javascript:audioElement.currentTime = 100;">Set to commercial end #0 (before news)</button>
+	    <button onclick="javascript:audioElement.currentTime = 290;">Set to commercial begin #1 (after news)</button>
+        <button onclick="javascript:audioElement.currentTime = 470;">Set to commercial end #1 (after news)</button>
+	    <button onclick="javascript:audioElement.currentTime = 3440;">Set to commercial begin #2 (before news)</button>
+        <button onclick="javascript:audioElement.currentTime = 3605;">Set to commercial end #2 (before news)</button>
+	    <button onclick="javascript:audioElement.currentTime = 3785;">Set to commercial begin #3 (after news)</button>
+        <button onclick="javascript:audioElement.currentTime = 4027;">Set to commercial end #3 (after news)</button>
+        <button onclick="javascript:setMute(true);">Mute</button>
+        <button onclick="javascript:setMute(false);">Unmute</button>
+        <script src="zapper_dtw.js"></script>
+    </body>
+</html>
